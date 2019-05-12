@@ -1,10 +1,9 @@
- OpCode: 0  Arg1:   Arg2:   Result:x 
- OpCode: 1  Arg1:0  Arg2:   Result:x 
- OpCode: 61  Arg1:SwitchStart  Arg2:  Result:x 
- OpCode: 70  Arg1:2  Arg2: case Result:x 
- OpCode: 0  Arg1:   Arg2:   Result:Bassel 
- OpCode: 70  Arg1:2  Arg2: case Result:x 
- OpCode: 0  Arg1:   Arg2:   Result:Mufeed 
- OpCode: 71  Arg1:  Arg2:   Result:DEFAULTCase 
- OpCode: 0  Arg1:   Arg2:   Result:Salah 
- OpCode: 72  Arg1:IF   Arg2: ENDSWITCH Result: 
+ OpCode: 100  Arg1:0.000000  Arg2: Func Result:FuncBody Begin  
+ OpCode: 0  Arg1:   Arg2:   Result:y2 
+ OpCode: 0  Arg1:   Arg2:   Result:y1 
+ OpCode: 0  Arg1:   Arg2:   Result:dummy 
+ OpCode: 1  Arg1:0  Arg2:   Result:dummy 
+ OpCode: 101  Arg1:RET  Arg2:  Result: 
+ OpCode: 0  Arg1:   Arg2:   Result:x1 
+ OpCode: 0  Arg1:   Arg2:   Result:x2 
+ OpCode: 63  Arg1:FunctionCall  Arg2: Func Result: 

@@ -10,3 +10,4 @@ float IM;
 char Complier;
 int x;
 }
+x=5;

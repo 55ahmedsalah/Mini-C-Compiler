@@ -31,7 +31,7 @@ namespace Complier
             // TODO: Change path acoordingly
             System.Diagnostics.Process.Start("cmd.exe", "/C C: & cd C:\\Users\\Mohamed\\Documents\\GitHub\\Mini-C-Compiler\\Compilers GUI & CMD.bat & pause");
 
-            richTextBox2.Text = File.ReadAllText(@"C:\\Users\\Mohamed\\Documents\\GitHub\\Mini-C-Compiler\\Compilers GUI\\Quad.txt");
+            richTextBox2.Text = File.ReadAllText(@"C:\\Users\\Mohamed\\Documents\\GitHub\\Mini-C-Compiler\\Compilers GUI\\codeGENERATED.txt");
             richTextBox3.Text = File.ReadAllText(@"C:\\Users\\Mohamed\\Documents\\GitHub\\Mini-C-Compiler\\Compilers GUI\\mySymbols.txt");
         }
 

@@ -1,16 +1,22 @@
 Used Identifiers :- 
-x of type Integer
+x1 of type Integer
+dummy of type Integer
 
 UnUsed Identifiers :- 
-Salah of type Integer
-Mufeed of type Integer
-Bassel of type Integer
+x3 of type Integer
+x2 of type Integer
+Func of type Integer
+y1 of type Integer
+y2 of type Integer
 
 Initilized Identifiers :- 
-x of type Integer
+x3 of type Integer
+dummy of type Integer
 
 UnInitilized Identifiers :- 
-Salah of type Integer
-Mufeed of type Integer
-Bassel of type Integer
+x2 of type Integer
+x1 of type Integer
+Func of type Integer
+y1 of type Integer
+y2 of type Integer
 

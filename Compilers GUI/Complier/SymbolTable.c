@@ -106,7 +106,7 @@ SymbolNode *  getID(char * Identifiyer, int rBraceSCope)
 
 	while (Walker)
 	{
-		if ((strcmp(Identifiyer, Walker->DATA->IdentifierName)==0 ) && (Walker->DATA->BracesScope !=-1 )  )
+		if ((strcmp(Identifiyer, Walker->DATA->IdentifierName)==0 ) && (Walker->DATA->BracesScope !=-1 ) )
 		{
 			return Walker;
 		}
@@ -669,19 +669,6 @@ void ExctractQuad(QuadNode* head,FILE *f)
 			ptr = ptr->Next;
 			SetReg(free);
 			break;
-		case OPENFUNC_:
-			fprintf(f,"    proc %s \n",ptr->DATA->Arg2);
-			ptr = ptr->Next;
-			break;
-		case CLOSEFUNE_:
-			fprintf(f,"RET\n");
-			ptr = ptr->Next;
-			break;
-		case CALLFUNC_:
-			fprintf(f,"PUSHA\ncall %s\n	POPA \n",ptr->DATA->Arg2);
-			ptr = ptr->Next;
-			break;
-		
 		default:
 			break;
 		}

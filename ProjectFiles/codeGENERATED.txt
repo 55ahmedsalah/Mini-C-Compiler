@@ -1,27 +1,17 @@
+    proc Func 
 MOV R0 ,   
-MOV x , R0 
-MOV R1 , 0 
-MOV x , R1 
-StartCase: 
-MOV R2 , x 
-COMPEQVAL R2 
-JNZ Case 
-JMP CloseCase 
-Case: 
-MOV R3 , x 
-COMPEQVAL R3 
-JNZ Case 
+MOV y2 , R0 
+MOV R1 ,   
+MOV y1 , R1 
+MOV R2 ,   
+MOV dummy , R2 
+MOV R3 , 0 
+MOV dummy , R3 
+RET
 MOV R4 ,   
-MOV Bassel , R4 
-JMP CloseCase 
-Case: 
-MOV R5 , x 
-COMPEQVAL R5 
-JNZ Case 
-MOV R6 ,   
-MOV Mufeed , R6 
-JMP CloseCase 
-DefaultCase: 
-MOV R0 ,   
-MOV Salah , R0 
-CloseSwitch: 
+MOV x1 , R4 
+MOV R5 ,   
+MOV x2 , R5 
+PUSHA
+call Func
+	POPA 
