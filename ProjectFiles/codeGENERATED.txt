@@ -1,27 +1,204 @@
-MOV R0 ,   
+MOV R0 , NULL 
+MOV compiler , R0 
+MOV R1 , 5 
+MOV R2 , 6 
+ADD Temp1 , R1 , R2
+MOV R3 , Temp1 
+MOV R4 , 4 
+ADD Temp2 , R3 , R4
+MOV R5 , Temp2 
+MOV R6 , 3 
+ADD Temp3 , R5 , R6
+MOV R0 , Temp3 
+MOV compiler , R0 
+MOV R1 , NULL 
+MOV compiling , R1 
+MOV R2 , NULL 
+MOV asd , R2 
+MOV R3 , NULL 
+MOV num , R3 
+MOV R4 ,  
+MOV num , R4 
+MOV R5 , NULL 
+MOV num2 , R5 
+MOV R6 , 1000000 
+MOV num2 , R6 
+MOV R0 , NULL 
+MOV welcome , R0 
+MOV R1 , "Compilers" 
+MOV welcome , R1 
+MOV R2 , NULL 
+MOV wel , R2 
+MOV R3 , 'C' 
+MOV wel , R3 
+MOV R4 , NULL 
+MOV weeee , R4 
+MOV R5 , '?' 
+MOV weeee , R5 
+MOV R6 , NULL 
+MOV x , R6 
+MOV R0 , 0 
 MOV x , R0 
-MOV R1 , 0 
+MOV R1 , x 
+INC R1 
 MOV x , R1 
-StartCase: 
 MOV R2 , x 
-COMPEQVAL R2 
-JNZ Case 
-JMP CloseCase 
-Case: 
+MOV R3 , 5 
+ADD Temp1 , R2 , R3
+MOV R4 , Temp1 
+MOV x , R4 
+MOV R5 , NULL 
+MOV y , R5 
+MOV R6 , NULL 
+MOV z , R6 
+MOV R0 , x 
+MOV R6 , y 
+DIV R6 
+MOV Temp1 , R0 
+MOV R0 , NULL 
+MOV r , R0 
+MOV R1 , Temp1 
+MOV r , R1 
+MOV R2 , NULL 
+MOV F , R2 
+MOV R3 ,  
+MOV F , R3 
+MOV R4 , NULL 
+MOV cufe , R4 
+MOV R5 , "fady" 
+MOV cufe , R5 
+MOV R6 , cufe 
+MOV R0 , "fady" 
+CMPEQ Temp1, R0 , R6 
+MOV R1 , x 
+MOV R2 , 10 
+CMPGEQ Temp2, R2 , R1 
+MOV R3 , Temp1 
+MOV R4 , Temp2 
+AND Temp3, R4 , R3 
+OpenIF 
+PRINT R5 
+CloseIF 
+OpenIF 
+MOV R6 , Temp3 
+MOV x , R6 
+MOV R0 , x 
+MOV R1 , 5 
+CMPEQ Temp1, R1 , R0 
+OpenIF 
+MOV R2 , 0 
+MOV R3 , r 
+SUB Temp2 , R2 , R3
+MOV R4 , Temp2 
+MOV x , R4 
+CloseIF 
+CloseIf 
+OpenElse 
+MOV R5 , x 
+MOV R6 , r 
+SUB Temp1 , R5 , R6
+MOV R0 , Temp1 
+MOV x , R0 
+CloseElse 
+MOV R1 , 0 
+MOV R2 , y 
+SUB Temp1 , R1 , R2
+MOV R3 , Temp1 
+MOV x , R3 
+MOV R4 , y 
+MOV R5 , 4 
+IMUL Temp1 , R4 , R5
+MOV R6 , Temp1 
+MOV r , R6 
+MOV R0 , NULL 
+MOV check , R0 
+MOV R1 , FALSE 
+MOV check , R1 
+MOV R2 , z 
+MOV R3 , TRUE 
+CMPEQ Temp1, R3 , R2 
+MOV R4 , Temp1 
+MOV R5 , z 
+OR Temp2, R5 , R4 
+OpenWhile : 
+JF CloseWhile 
+MOV R6 , Temp2 
+MOV z , R6 
+MOV R0 , TRUE 
+MOV check , R0 
+JC OpenWhile 
+CloseWhile : 
+MOV R1 , NULL 
+MOV a , R1 
+OpenDoWhile : 
+MOV R2 ,  
+MOV a , R2 
+MOV R3 , a 
+MOV R4 ,  
+CMPL Temp1, R4 , R3 
+JC OpenDoWhile 
+PRINT R5 
+PRINT R6 
+MOV R0 , Temp1 
+MOV x , R0 
+MOV R1 ,  
+MOV i , R1 
+MOV R2 , i 
+MOV R3 , 10 
+CMPL Temp1, R3 , R2 
+OpenForLoop : 
+JF CloseForLoop 
+MOV R4 , i 
+INC R4 
+MOV i , R4 
+MOV R5 , x 
+INC R5 
+MOV x , R5 
+MOV R6 , x 
+MOV R0 , 2 
+CMPEQ Temp2, R0 , R6 
+OpenIF 
+MOV R1 , Temp2 
+MOV x , R1 
+CloseIF 
+JC OpenForLoop 
+CloseForLoop : 
+MOV R2 , x 
+MOV R3 , 100 
+CMPNEQ Temp1, R3 , R2 
+OpenIF 
+PRINT R4 
+CloseIF 
+MOV R5 , x 
+MOV R6 , 3 
+CMPLEQ Temp2, R6 , R5 
+OpenIF 
+MOV R0 , NULL 
+MOV v , R0 
+MOV R1 , Temp2 
+MOV v , R1 
+PRINT R2 
+CloseIF 
+StartCase: 
 MOV R3 , x 
 COMPEQVAL R3 
 JNZ Case 
-MOV R4 ,   
-MOV Bassel , R4 
 JMP CloseCase 
 Case: 
-MOV R5 , x 
-COMPEQVAL R5 
+MOV R4 , x 
+COMPEQVAL R4 
 JNZ Case 
-MOV R6 ,   
-MOV Mufeed , R6 
+MOV R5 , NULL 
+MOV Bassel , R5 
+JMP CloseCase 
+Case: 
+MOV R6 , x 
+COMPEQVAL R6 
+JNZ Case 
+MOV R0 , NULL 
+MOV Mufeed , R0 
 JMP CloseCase 
 DefaultCase: 
-MOV R0 ,   
-MOV Salah , R0 
+MOV R1 , NULL 
+MOV Salah , R1 
 CloseSwitch: 

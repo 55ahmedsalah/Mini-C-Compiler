@@ -7,3 +7,4 @@ C:\Users\Haru\Desktop\Comp\Mini-C-Compiler\ProjectFiles\Compilers gui\Compilers 
 C:\Users\Haru\Desktop\Comp\Mini-C-Compiler\ProjectFiles\Compilers gui\Compilers gui\obj\Debug\Compilers gui.csproj.GenerateResource.Cache
 C:\Users\Haru\Desktop\Comp\Mini-C-Compiler\ProjectFiles\Compilers gui\Compilers gui\obj\Debug\Compilers gui.exe
 C:\Users\Haru\Desktop\Comp\Mini-C-Compiler\ProjectFiles\Compilers gui\Compilers gui\obj\Debug\Compilers gui.pdb
+C:\Users\Haru\Desktop\New folder\Mini-C-Compiler\ProjectFiles\GUI\bin\Debug\Compilers gui.exe.config
