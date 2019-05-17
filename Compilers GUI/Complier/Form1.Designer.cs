@@ -38,6 +38,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -56,20 +58,18 @@
             this.richTextBox2.Location = new System.Drawing.Point(12, 355);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.Size = new System.Drawing.Size(606, 287);
+            this.richTextBox2.Size = new System.Drawing.Size(363, 287);
             this.richTextBox2.TabIndex = 2;
             this.richTextBox2.Text = "";
-            this.richTextBox2.WordWrap = false;
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(624, 353);
+            this.richTextBox3.Location = new System.Drawing.Point(386, 355);
             this.richTextBox3.Name = "richTextBox3";
             this.richTextBox3.ReadOnly = true;
-            this.richTextBox3.Size = new System.Drawing.Size(606, 287);
+            this.richTextBox3.Size = new System.Drawing.Size(414, 287);
             this.richTextBox3.TabIndex = 3;
             this.richTextBox3.Text = "";
-            this.richTextBox3.WordWrap = false;
             // 
             // label1
             // 
@@ -98,7 +98,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(620, 329);
+            this.label3.Location = new System.Drawing.Point(381, 329);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(181, 29);
             this.label3.TabIndex = 7;
@@ -156,6 +156,26 @@
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(810, 355);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.ReadOnly = true;
+            this.richTextBox4.Size = new System.Drawing.Size(414, 287);
+            this.richTextBox4.TabIndex = 12;
+            this.richTextBox4.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Consolas", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Location = new System.Drawing.Point(806, 329);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(153, 29);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Error List";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -163,6 +183,8 @@
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1235, 654);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -176,7 +198,7 @@
             this.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "Form1";
-            this.Text = "Compilers GUI";
+            this.Text = "Mini C Compiler";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,6 +216,8 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.Label label4;
     }
 }
 

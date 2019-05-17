@@ -29,10 +29,22 @@ namespace Complier
             txt.Close();
 
             // TODO: Change path acoordingly
-            System.Diagnostics.Process.Start("cmd.exe", "/C C: & cd C:\\Users\\Mohamed\\Documents\\GitHub\\Mini-C-Compiler\\Compilers GUI & CMD.bat & pause");
-
-            richTextBox2.Text = File.ReadAllText(@"C:\\Users\\Mohamed\\Documents\\GitHub\\Mini-C-Compiler\\Compilers GUI\\Quad.txt");
-            richTextBox3.Text = File.ReadAllText(@"C:\\Users\\Mohamed\\Documents\\GitHub\\Mini-C-Compiler\\Compilers GUI\\mySymbols.txt");
+            Process process = new Process();
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.CreateNoWindow = true;
+            process.StartInfo.RedirectStandardInput = true;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.StartInfo.UseShellExecute = false;
+            process.Start();
+            process.StandardInput.WriteLine("/C C: & cd C:\\Users\\Haru\\Desktop\\New folder\\Mini-C-Compiler\\Compilers GUI & CMD.bat");
+            process.StandardInput.Flush();
+            process.StandardInput.Close();
+            process.WaitForExit();
+            // Process process = System.Diagnostics.Process.Start("cmd.exe", "/C C: & cd C:\\Users\\Haru\\Desktop\\New folder\\Mini-C-Compiler\\Compilers GUI & CMD.bat & pause");
+            richTextBox4.Text = process.StandardOutput.ReadToEnd().Substring(633);
+            // richTextBox4.Text = process.StandardOutput.ReadToEnd();
+            richTextBox2.Text = File.ReadAllText(@"C:\\Users\\Haru\\Desktop\\New folder\\Mini-C-Compiler\\Compilers GUI\\codeGENERATED.txt");
+            richTextBox3.Text = File.ReadAllText(@"C:\\Users\\Haru\\Desktop\\New folder\\Mini-C-Compiler\\Compilers GUI\\mySymbols.txt");
         }
 
         private void button2_Click(object sender, EventArgs e)
