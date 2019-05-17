@@ -1,6 +1,12 @@
+<<<<<<< HEAD
  OpCode: 0  Arg1:   Arg2:   Result:x 
  OpCode: 0  Arg1:   Arg2:   Result:y 
  OpCode: 0  Arg1:   Arg2:   Result:z 
  OpCode: 1  Arg1:25  Arg2:   Result:z 
  OpCode: 0  Arg1:   Arg2:   Result:xx 
  OpCode: 1  Arg1:0  Arg2:   Result:xx 
+=======
+ OpCode: 13  Arg1:5  Arg2: 0 Result:Temp1 
+ OpCode: 0  Arg1:   Arg2:   Result:x 
+ OpCode: 1  Arg1:Temp1  Arg2:   Result:x 
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599

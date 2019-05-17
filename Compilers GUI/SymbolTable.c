@@ -13,7 +13,10 @@ struct SymbolData* setSymbol(int rType, int rValue, bool rUsed, int Scope,char* 
 	data->IdentifierName = Identifyier;
 	data->Modifiable=rModifiable;// it can be set automatically 
 	data->BracesScope = ScopeNum;
+<<<<<<< HEAD
 	data->beforeScope=ScopeNum;
+=======
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 	data->IsFunctionSymbol = false;
 	
 
@@ -107,7 +110,11 @@ SymbolNode *  getID(char * Identifiyer, int rBraceSCope)
 
 	while (Walker)
 	{
+<<<<<<< HEAD
 		if ((strcmp(Identifiyer, Walker->DATA->IdentifierName)==0 ) && (Walker->DATA->BracesScope !=-1 ) )
+=======
+		if ((strcmp(Identifiyer, Walker->DATA->IdentifierName)==0 ) && (Walker->DATA->BracesScope !=-1 )  )
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 		{
 			return Walker;
 		}
@@ -218,7 +225,11 @@ void printUsed(FILE *f)
 	{
 		if (Walker->DATA->Used)
 		{
+<<<<<<< HEAD
 			fprintf(f, "%s of type %s ScopeNum:%d\n", Walker->DATA->IdentifierName, idtype[Walker->DATA->Type],Walker->DATA->beforeScope);
+=======
+			fprintf(f, "%s of type %s\n", Walker->DATA->IdentifierName, idtype[Walker->DATA->Type]);
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 		}
 		Walker = Walker->Next;
 	}
@@ -233,7 +244,11 @@ void printNotUsed(FILE *f)
 	{
 		if (!(Walker->DATA->Used))
 		{
+<<<<<<< HEAD
 			fprintf(f, "%s of type %s ScopeNum: %d\n", Walker->DATA->IdentifierName, idtype[Walker->DATA->Type],Walker->DATA->beforeScope);
+=======
+			fprintf(f, "%s of type %s\n", Walker->DATA->IdentifierName, idtype[Walker->DATA->Type]);
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 		}
 		Walker = Walker->Next;
 	}
@@ -248,7 +263,11 @@ void printInitilized(FILE *f)
 	{
 		if (Walker->DATA->Initilzation)
 		{
+<<<<<<< HEAD
 			fprintf(f, "%s of type %s ScopeNum: %d\n", Walker->DATA->IdentifierName, idtype[Walker->DATA->Type],Walker->DATA->beforeScope);
+=======
+			fprintf(f, "%s of type %s\n", Walker->DATA->IdentifierName, idtype[Walker->DATA->Type]);
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 		}
 		Walker = Walker->Next;
 	}
@@ -264,7 +283,10 @@ void printNotInit(FILE *f)
 		if (!(Walker->DATA->Initilzation))
 		{
 			fprintf(f, "%s of type %s\n", Walker->DATA->IdentifierName, idtype[Walker->DATA->Type]);
+<<<<<<< HEAD
 			fprintf(f, "%s of type %s ScopeNum:%d\n", Walker->DATA->IdentifierName, idtype[Walker->DATA->Type],Walker->DATA->beforeScope);
+=======
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 		}
 		Walker = Walker->Next;
 	}
@@ -336,8 +358,28 @@ void ExctractQuad(QuadNode* head,FILE *f)
 		{
 		case DECLARE_:
 			free = CheckReg();
+<<<<<<< HEAD
 			fprintf(f, "MOV %s , %s \n", free.reg,"NULL");
 			fprintf(f, "MOV %s , %s \n", ptr->DATA->Result,free.reg);
+=======
+			if (ptr->DATA->Arg1 == " " && ptr->DATA->Arg2 == " ")
+			{
+				fprintf(f, "MOV %s , %s \n", free.reg,"NULL");
+				fprintf(f, "MOV %s , %s \n", ptr->DATA->Result,free.reg);
+			}
+			else if (ptr->DATA->Arg1 != " ") {
+				fprintf(f, "MOV %s , %s \n", free.reg,ptr->DATA->Arg1);
+				fprintf(f, "MOV %s , %s \n", ptr->DATA->Result, free.reg);
+			//	output.push_back("MOV " + free.reg + "," + (string)ptr->DATA->Arg1);
+			//	output.push_back("MOV " + (string)ptr->DATA->Result + "," + free.var);
+			}
+			else if (ptr->DATA->Arg2 != " ") {
+				fprintf(f, "MOV %s , %s \n", free.reg, ptr->DATA->Arg2);
+				fprintf(f, "MOV %s , %s \n", ptr->DATA->Result, free.reg);
+			//	output.push_back("MOV " + free.reg + "," + (string)ptr->DATA->Arg2);
+			//	output.push_back("MOV " + (string)ptr->DATA->Result + "," + free.var);
+			}
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 			free.used++;
 			free.var = ptr->DATA->Result;
 			SetReg(free);
@@ -501,7 +543,11 @@ void ExctractQuad(QuadNode* head,FILE *f)
 			ptr = ptr->Next;
 			break;
 		case CLOSEFORLOOP_:
+<<<<<<< HEAD
 			fprintf(f, "JC %s \n", "OpenForLoop");
+=======
+			fprintf(f, "JC %s \n", ptr->DATA->Arg2);
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 			fprintf(f, "%s : \n",ptr->DATA->Result);
 			ptr = ptr->Next;
 			break;

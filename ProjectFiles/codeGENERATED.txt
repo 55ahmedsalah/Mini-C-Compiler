@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 MOV R0 , NULL 
 MOV compiler , R0 
 MOV R1 , 5 
@@ -202,3 +203,22 @@ DefaultCase:
 MOV R1 , NULL 
 MOV Salah , R1 
 CloseSwitch: 
+=======
+    proc Func 
+MOV R0 ,   
+MOV y2 , R0 
+MOV R1 ,   
+MOV y1 , R1 
+MOV R2 ,   
+MOV dummy , R2 
+MOV R3 , 0 
+MOV dummy , R3 
+RET
+MOV R4 ,   
+MOV x1 , R4 
+MOV R5 ,   
+MOV x2 , R5 
+PUSHA
+call Func
+	POPA 
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599

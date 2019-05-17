@@ -106,7 +106,7 @@ SymbolNode *  getID(char * Identifiyer, int rBraceSCope)
 
 	while (Walker)
 	{
-		if ((strcmp(Identifiyer, Walker->DATA->IdentifierName)==0 ) && (Walker->DATA->BracesScope !=-1 )  )
+		if ((strcmp(Identifiyer, Walker->DATA->IdentifierName)==0 ) && (Walker->DATA->BracesScope !=-1 ) )
 		{
 			return Walker;
 		}
@@ -334,8 +334,23 @@ void ExctractQuad(QuadNode* head,FILE *f)
 		{
 		case DECLARE_:
 			free = CheckReg();
-			fprintf(f, "MOV %s , %s \n", free.reg,"NULL");
-			fprintf(f, "MOV %s , %s \n", ptr->DATA->Result,free.reg);
+			if (ptr->DATA->Arg1 == " " && ptr->DATA->Arg2 == " ")
+			{
+				fprintf(f, "MOV %s , %s \n", free.reg,"NULL");
+				fprintf(f, "MOV %s , %s \n", ptr->DATA->Result,free.reg);
+			}
+			else if (ptr->DATA->Arg1 != " ") {
+				fprintf(f, "MOV %s , %s \n", free.reg,ptr->DATA->Arg1);
+				fprintf(f, "MOV %s , %s \n", ptr->DATA->Result, free.reg);
+			//	output.push_back("MOV " + free.reg + "," + (string)ptr->DATA->Arg1);
+			//	output.push_back("MOV " + (string)ptr->DATA->Result + "," + free.var);
+			}
+			else if (ptr->DATA->Arg2 != " ") {
+				fprintf(f, "MOV %s , %s \n", free.reg, ptr->DATA->Arg2);
+				fprintf(f, "MOV %s , %s \n", ptr->DATA->Result, free.reg);
+			//	output.push_back("MOV " + free.reg + "," + (string)ptr->DATA->Arg2);
+			//	output.push_back("MOV " + (string)ptr->DATA->Result + "," + free.var);
+			}
 			free.used++;
 			free.var = ptr->DATA->Result;
 			SetReg(free);
@@ -499,7 +514,7 @@ void ExctractQuad(QuadNode* head,FILE *f)
 			ptr = ptr->Next;
 			break;
 		case CLOSEFORLOOP_:
-			fprintf(f, "JC %s \n", "OpenForLoop");
+			fprintf(f, "JC %s \n", ptr->DATA->Arg2);
 			fprintf(f, "%s : \n",ptr->DATA->Result);
 			ptr = ptr->Next;
 			break;
@@ -654,19 +669,6 @@ void ExctractQuad(QuadNode* head,FILE *f)
 			ptr = ptr->Next;
 			SetReg(free);
 			break;
-		case OPENFUNC_:
-			fprintf(f,"    proc %s \n",ptr->DATA->Arg2);
-			ptr = ptr->Next;
-			break;
-		case CLOSEFUNE_:
-			fprintf(f,"RET\n");
-			ptr = ptr->Next;
-			break;
-		case CALLFUNC_:
-			fprintf(f,"PUSHA\ncall %s\n	POPA \n",ptr->DATA->Arg2);
-			ptr = ptr->Next;
-			break;
-		
 		default:
 			break;
 		}

@@ -158,7 +158,7 @@
 %type <IntgerValue> type   
 %type <dummy> stmt  increments forExpression  function  caseExpression 
 %type <dummy>  blockScope manyStatements scopeOpen scopeClose 
-%type<ID>funcQuad
+
 %type <X> equalFamily expression DataTypes booleanExpression callFunction
 %%
 // All Capital Letters are terminals Tokens else are non terminals 
@@ -234,7 +234,7 @@ stmt:   type IDENTIFIER SEMICOLON	%prec IFX                 				{
 																				CreateID($2+5,$3,IDCount++,SCOPE_Number);
 																			if(checktypeIDENTIFER(getSymbolType($3),$5->Type,$3))
 																			{
-																			
+																				printf("weee\n");
 																				//getIDENTIFIER($3,SCOPE_Number);// setValue here 
 																				setQuad(0," "," ",$3,QuadCount++);// Create  first IDENTIFIER
 																				if(TempIsUsed)
@@ -296,7 +296,6 @@ stmt:   type IDENTIFIER SEMICOLON	%prec IFX                 				{
 																				{
 		
 																					getIDENTIFIER($2,SCOPE_Number);// setValue here 
-																					setQuad(63,"FunctionCall",$4->Value,"",QuadCount++);
 																					printf("Function Call\n");
 																				}
 																				else
@@ -313,17 +312,15 @@ stmt:   type IDENTIFIER SEMICOLON	%prec IFX                 				{
 		
 		;
 create :IDENTIFIER ASSIGN INTEGER{CreateID(0,$1 ,IDCount++,SCOPE_Number+1);getIDENTIFIER($1,SCOPE_Number);char c[3] = {};sprintf(c,"%d",$3);setQuad(1,c," ",$1,QuadCount++);}; 			// a rule to create IDENTIFIER in For Loop  
-function : type funcQuad ORBRACKET resetCounter argList CRBRACKET OCBRACKET scopeOpen  manyStatements RETURN  expression  SEMICOLON   CCBRACKET scopeClose  
+function : type IDENTIFIER ORBRACKET resetCounter argList CRBRACKET OCBRACKET scopeOpen funcQuad manyStatements RETURN  expression  SEMICOLON   CCBRACKET scopeClose  
 																															{
 																																$$=NULL;
-																																if($1 !=$11->Type)//check return types 
+																																if($1 !=$12->Type)//check return types 
 																																{
 																																	ThrowError("Error: incompatible return types of Function ",$2);
 																																}
 																																else
-																																
 																																{
-																																	//printf("%d  %s %d \n",$1,$2,SCOPE_Number);
 																																	CreateFunction($1,$2,IDCount++,SCOPE_Number,ArgCounter,FuncArgTypes);
 																																	
 																																	printf("function\n");
@@ -331,11 +328,9 @@ function : type funcQuad ORBRACKET resetCounter argList CRBRACKET OCBRACKET scop
 																															}// create a function symbol 
 	   ;
 callFunction: IDENTIFIER ORBRACKET resetCounter callList CRBRACKET SEMICOLON// To-DO check here
-																{//printf("weeeee%s %d \n",$1,SCOPE_Number);
-																	$$=(struct TypeAndValue*) malloc(sizeof(struct TypeAndValue));
+																{
 																	$$->Type=getSymbolType($1);
 																	$$->Value=$1;
-																	
 																	int num =checkArgType(ArgCounter,FuncArgTypes,$1,SCOPE_Number);
 																	if(num==-25)
 																	{
@@ -620,7 +615,7 @@ caseExpression:	DEFAULT COLON{setQuad(71,""," ","DEFAULTCase",QuadCount++);}many
 whileQuad:expression{char c[3] = {};sprintf(c,"%f",SCOPE_Number);setQuad(20,c,$1->Value,"OpenWhile",QuadCount++);}
 dowhileQuad:{char c[3] = {};sprintf(c,"%f",SCOPE_Number);setQuad(22,c," ","OpenDoWhile",QuadCount++);}
 forQuad:expression SEMICOLON{char c[3] = {};sprintf(c,"%f",SCOPE_Number);setQuad(21,c,$1->Value,"OpenForLoop",QuadCount++);}
-funcQuad:IDENTIFIER{char c[3] = {};sprintf(c,"%f",SCOPE_Number);setQuad(100,c,$1,"FuncBody Begin ",QuadCount++);$$=$1;}
+funcQuad:{char c[3] = {};sprintf(c,"%f",SCOPE_Number);setQuad(100,c," ","FuncBody Begin ",QuadCount++);}
 switchQuad:IDENTIFIER{SwitchValue=strdup($1);setQuad(61,"SwitchStart","",$1,QuadCount++);usedIDENTIFIER($1,SCOPE_Number);}
 ifQuad:expression {setQuad(60,"IF ","OpenIF","",QuadCount++);}
 elseQuad:{setQuad(80,"else","n","",QuadCount++);}blockScope

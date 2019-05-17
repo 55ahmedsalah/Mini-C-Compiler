@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 int compiler;
 compiler=5+6+4+3;
 bool compiling;
@@ -80,16 +81,13 @@ if ( x <= 3)
 }
 
 switch (x)
+=======
+int Func(int y1,int y2)
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 {
-	case 1:
-		int Bassel;
-	break;
-
-	case 2:
-		int Mufeed;
-	break;
-   
-    default:
-		int Salah;
-	break;		
+int  dummy=0;
+return dummy;
 }
+int x1;
+int x2;
+int x3=Func(x1,x1);

@@ -1,6 +1,7 @@
 Used Identifiers :- 
 
 UnUsed Identifiers :- 
+<<<<<<< HEAD
 xx of type Integer ScopeNum: 3
 z of type Integer ScopeNum: 3
 y of type Integer ScopeNum: 2
@@ -15,4 +16,12 @@ y of type Integer
 y of type Integer ScopeNum:2
 x of type Integer
 x of type Integer ScopeNum:1
+=======
+x of type Integer
+
+Initilized Identifiers :- 
+x of type Integer
+
+UnInitilized Identifiers :- 
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 

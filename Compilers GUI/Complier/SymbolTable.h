@@ -53,10 +53,6 @@ typedef struct SymbolData
 	bool Initilzation;//			indicate the symbol Initilzed a value or not 
 	bool Used;//					indicate used or not as it needed in output 
 	int BracesScope;//				representing the scope number that the variable is decleared
-<<<<<<< HEAD
-	int beforeScope;
-=======
->>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
 	char * Value;//					representing the value of assigned token
 	char * IdentifierName;//		The name of Varible
 	bool Modifiable;//				represent var constant or not 

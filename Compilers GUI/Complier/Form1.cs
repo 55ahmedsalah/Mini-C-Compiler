@@ -29,6 +29,7 @@ namespace Complier
             txt.Close();
 
             // TODO: Change path acoordingly
+<<<<<<< HEAD
             Process process = new Process();
             process.StartInfo.FileName = "cmd.exe";
             process.StartInfo.CreateNoWindow = true;
@@ -45,6 +46,12 @@ namespace Complier
             // richTextBox4.Text = process.StandardOutput.ReadToEnd();
             richTextBox2.Text = File.ReadAllText(@"C:\\Users\\Haru\\Desktop\\New folder\\Mini-C-Compiler\\Compilers GUI\\codeGENERATED.txt");
             richTextBox3.Text = File.ReadAllText(@"C:\\Users\\Haru\\Desktop\\New folder\\Mini-C-Compiler\\Compilers GUI\\mySymbols.txt");
+=======
+            System.Diagnostics.Process.Start("cmd.exe", "/C C: & cd C:\\Users\\Mohamed\\Documents\\GitHub\\Mini-C-Compiler\\Compilers GUI & CMD.bat & pause");
+
+            richTextBox2.Text = File.ReadAllText(@"C:\\Users\\Mohamed\\Documents\\GitHub\\Mini-C-Compiler\\Compilers GUI\\codeGENERATED.txt");
+            richTextBox3.Text = File.ReadAllText(@"C:\\Users\\Mohamed\\Documents\\GitHub\\Mini-C-Compiler\\Compilers GUI\\mySymbols.txt");
+>>>>>>> a6e41fc8727bc90c3db77823228f92a0cb28d599
         }
 
         private void button2_Click(object sender, EventArgs e)
